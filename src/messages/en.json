@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog & Insights",
+    "about": "About",
+    "contact": "Contact",
+    "admin": "CMS Admin"
+  },
+  "hero": {
+    "role": "Senior Backend Engineer & Distributed Systems Architect",
+    "tagline": "Architecting resilient, high-throughput backend infrastructure, event-driven pipelines, enterprise ERP engines, and autonomous AI (MCP) integrations.",
+    "ctaProjects": "Explore Systems",
+    "ctaContact": "Contact Amirhossein",
+    "statsExp": "Years Engineering",
+    "statsProjects": "Core Platforms",
+    "statsUptime": "High Availability",
+    "badgeStatus": "Available for Architecture Advisory & Lead Roles"
+  },
+  "sections": {
+    "skillsTitle": "Technical Arsenal & Core Competencies",
+    "skillsSubtitle": "Specialized in Python distributed microservices, low-latency datastores, and agentic workflows.",
+    "experienceTitle": "Professional Trajectory & Leadership",
+    "experienceSubtitle": "Track record of scaling mission-critical systems and directing engineering teams.",
+    "projectsTitle": "Engineered Systems & Enterprise Architecture",
+    "projectsSubtitle": "Real-world platforms spanning multi-tenant ERPs, telemetry streaming, and automated ledgers.",
+    "certificationsTitle": "Certifications & Education",
+    "certificationsSubtitle": "Academic rigor combined with certified algorithmic problem solving.",
+    "blogTitle": "Architecture Notes & Technical Writing",
+    "blogSubtitle": "Deep dives into systems performance, concurrency, and protocol engineering."
+  },
+  "projects": {
+    "viewDetails": "View Architecture",
+    "sourceCode": "Repository",
+    "liveDemo": "Live System",
+    "status": "Status",
+    "techStack": "Tech Stack"
+  },
+  "common": {
+    "readMore": "Read full article",
+    "backHome": "Back to Home",
+    "search": "Search systems, articles...",
+    "language": "Language",
+    "theme": "Theme"
+  }
+}

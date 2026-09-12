@@ -1,0 +1,135 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+enum ProjectStatus {
+  INTERNAL
+  DEVELOPMENT
+  DEMO_READY
+  SHUTDOWN
+  PRODUCTION
+}
+
+model AdminUser {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         Role     @default(ADMIN)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Profile {
+  id              String   @id @default(uuid())
+  avatarUrl       String?  @default("/images/profile.jpg")
+  fullNameEn      String   @default("Amirhossein Omidi")
+  fullNameFa      String   @default("امیرحسین امیدی")
+  titleEn         String   @default("Senior Backend Engineer & Systems Architect")
+  titleFa         String   @default("برنامه نویس ارشد بک اند و معمار سیستم")
+  bioEn           String   @db.Text
+  bioFa           String   @db.Text
+  locationEn      String   @default("Karaj, Iran")
+  locationFa      String   @default("ایران، کرج")
+  githubUrl       String?  @default("https://github.com")
+  linkedinUrl     String?  @default("https://linkedin.com")
+  telegramUrl     String?  @default("https://t.me")
+  email           String   @default("contact@amirhossein.dev")
+  yearsExperience Int      @default(8)
+  updatedAt       DateTime @updatedAt
+}
+
+model SkillCategory {
+  id     String  @id @default(uuid())
+  nameEn String
+  nameFa String
+  order  Int     @default(0)
+  skills Skill[]
+}
+
+model Skill {
+  id          String        @id @default(uuid())
+  name        String
+  level       String        // Advanced, Mid-Level, Specialized
+  proficiency Int           // 0 to 100
+  iconKey     String?       // Lucide or SimpleIcon slug
+  categoryId  String
+  category    SkillCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+}
+
+model Project {
+  id             String        @id @default(uuid())
+  slug           String        @unique
+  titleEn        String
+  titleFa        String
+  subtitleEn     String
+  subtitleFa     String
+  descriptionEn  String        @db.Text
+  descriptionFa  String        @db.Text
+  status         ProjectStatus @default(INTERNAL)
+  techStack      String[]      // ["Python", "FastAPI", "PostgreSQL", "Docker"]
+  architectureEn String?       @db.Text
+  architectureFa String?       @db.Text
+  githubUrl      String?
+  liveUrl        String?
+  galleryImages  String[]      @default([]) // Gallery of screenshots/mockups
+  featured       Boolean       @default(false)
+  order          Int           @default(0)
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+}
+
+model Experience {
+  id           String   @id @default(uuid())
+  companyEn    String
+  companyFa    String
+  roleEn       String
+  roleFa       String
+  locationEn   String?
+  locationFa   String?
+  periodEn     String   // e.g. "2025 - Present"
+  periodFa     String   // e.g. "۱۴۰۴ - اکنون"
+  summaryEn    String   @db.Text
+  summaryFa    String   @db.Text
+  achievements String[]
+  order        Int      @default(0)
+  isCurrent    Boolean  @default(false)
+}
+
+model Certification {
+  id         String  @id @default(uuid())
+  titleEn    String
+  titleFa    String
+  issuerEn   String
+  issuerFa   String
+  year       String
+  credential String?
+  order      Int     @default(0)
+}
+
+model Article {
+  id          String   @id @default(uuid())
+  slug        String   @unique
+  titleEn     String
+  titleFa     String
+  summaryEn   String   @db.Text
+  summaryFa   String   @db.Text
+  contentEn   String   @db.Text
+  contentFa   String   @db.Text
+  coverImage  String?
+  tags        String[]
+  published   Boolean  @default(false)
+  readingTime String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
