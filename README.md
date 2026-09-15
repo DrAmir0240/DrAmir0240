@@ -8,7 +8,7 @@
 </a>
 
 <p align="center">
-  <a href="mailto:amirhosseinomidi1383@gmail.com"><img src="https://img.shields.io/badge/Email-contact%40amirhosseinomidi1383@gmail.com-0078D4?style=for-the-badge&logo=microsoftoutlook&logoColor=white" alt="Email" /></a>
+  <a href="mailto:amirhosseinomidi1383@gmail.com"><img src="https://img.shields.io/badge/Email-amirhosseinomidi1383@gmail.com-0078D4?style=for-the-badge&logo=microsoftoutlook&logoColor=white" alt="Email" /></a>
   <a href="https://instagram.com/dr.amir.0240"><img src="https://img.shields.io/badge/Instagram-@dr.amir.0240-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
   <a href="https://github.com/DrAmir0240"><img src="https://img.shields.io/badge/GitHub-DrAmir0240-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
 </p>
